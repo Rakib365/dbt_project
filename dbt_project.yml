@@ -20,7 +20,7 @@ on-run-start:
 
 models:
   analytics:
-    +location: europe-west3
+    +location: us-central1
     raw:
       +materialized: table
       +schema: dbt_uautomation_raw_tables

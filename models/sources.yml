@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: upmind_rds_tp_upmind
-    database: upmind-datawarehouse
+    database: summer-surfer-433117-j1
     schema: upmind_rds_tp_upmind
     loader: fivetran
     loaded_at_field: _fivetran_synced
