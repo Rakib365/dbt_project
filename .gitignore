@@ -2,4 +2,7 @@ target/
 dbt_packages/
 logs/
 .user.yml
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> d6e906580ced66a8024398e9686784c7089f2e61

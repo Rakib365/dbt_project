@@ -1,0 +1,138 @@
+version: 2
+
+sources:
+  - name: paymentprovider_stripe
+    database: upmind-datawarehouse
+    schema: paymentprovider_stripe
+    tables:
+      - name: account
+        identifier: account
+      - name: apple_pay_domain
+        identifier: apple_pay_domain
+      - name: application_fee
+        identifier: application_fee
+      - name: application_fee_refund
+        identifier: application_fee_refund
+      - name: balance_transaction
+        identifier: balance_transaction
+      - name: bank_account
+        identifier: bank_account
+      - name: card
+        identifier: card
+      - name: charge
+        identifier: charge
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: checkout_session
+        identifier: checkout_session
+      - name: coupon
+        identifier: coupon
+      - name: credit_note
+        identifier: credit_note
+      - name: customer
+        identifier: customer
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: customer_balance_transaction
+        identifier: customer_balance_transaction
+      - name: discount
+        identifier: discount
+      - name: dispute
+        identifier: dispute
+      - name: invoice
+        identifier: invoice
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: invoice_item
+        identifier: invoice_item
+      - name: invoice_line_item
+        identifier: invoice_line_item
+      - name: payment_intent
+        identifier: payment_intent
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: payment_method
+        identifier: payment_method
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: payment_method_card
+        identifier: payment_method_card
+      - name: refund
+        identifier: refund
+      - name: subscription
+        identifier: subscription
+
+  - name: upmind_rds
+    database: upmind-datawarehouse
+    schema: upmind_rds_tp_upmind
+    tables:
+      - name: clients
+        identifier: clients
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: clients_emails
+        identifier: clients_emails
+      - name: clients_addresses
+        identifier: clients_addresses
+      - name: clients_payment_details
+        identifier: clients_payment_details
+      - name: clients_companies
+        identifier: clients_companies
+
+  - name: datawarehouse
+    database: upmind-datawarehouse
+    schema: datawarehouse
+    tables:
+      - name: upmind_d1_hook_log_data
+        identifier: upmind_d1_hook_log_data
+      - name: upmind_d1_hook_logs
+        identifier: upmind_d1_hook_logs
+
+  - name: dwh_poc
+    database: upmind-datawarehouse
+    schema: dwh_poc
+    tables:
+      - name: upmind_prod__upmind_master_brands
+        identifier: upmind-prod__upmind_master-brands
+      - name: upmind_prod__upmind_hook_log_data
+        identifier: upmind-prod__upmind-hook_log_data
+      - name: upmind_prod__upmind_master_oauth_clients
+        identifier: upmind-prod__upmind_master-oauth_clients
+      - name: upmind_prod__upmind_master_organisations
+        identifier: upmind-prod__upmind_master-organisations
+
+  - name: upmind_master
+    database: upmind-datawarehouse
+    schema: upmind_rds_tp_upmind_master
+    tables:
+      - name: brands
+        identifier: brands
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: organisations
+        identifier: organisations
+      - name: oauth_clients
+        identifier: oauth_clients
+      - name: oauth_applications
+        identifier: oauth_applications

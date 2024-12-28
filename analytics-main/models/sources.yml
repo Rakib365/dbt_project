@@ -1,0 +1,616 @@
+version: 2
+
+sources:
+  - name: upmind_rds_tp_upmind
+    database: upmind-datawarehouse
+    schema: upmind_rds_tp_upmind
+    loader: fivetran
+    loaded_at_field: _fivetran_synced
+    tables:
+      - name: account_types
+        identifier: account_types
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of account_types
+            tests:
+              - unique
+              - not_null
+
+      - name: accounts
+        identifier: accounts
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of accounts
+            tests:
+              - unique
+              - not_null
+
+      - name: accounts_statuses
+        identifier: accounts_statuses
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of accounts_statuses
+            tests:
+              - unique
+              - not_null
+
+      - name: billing_cycles
+        identifier: billing_cycles
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of billing_cycles
+            tests:
+              - unique
+              - not_null
+
+      - name: brand_language
+        identifier: brand_language
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of brand_language
+            tests:
+              - unique
+              - not_null
+
+      - name: brands
+        identifier: brands
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of brands
+            tests:
+              - unique
+              - not_null
+
+      - name: card_types
+        identifier: card_types
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of card_types
+            tests:
+              - unique
+              - not_null
+
+      - name: clients
+        identifier: clients
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of clients
+            tests:
+              - unique
+              - not_null
+
+      - name: clients_accounts
+        identifier: clients_accounts
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of clients_accounts
+            tests:
+              - unique
+              - not_null
+
+      - name: contracts
+        identifier: contracts
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of contracts
+            tests:
+              - unique
+              - not_null
+
+      - name: contracts_products
+        identifier: contracts_products
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of contracts_products
+            tests:
+              - unique
+              - not_null
+
+      - name: countries
+        identifier: countries
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of countries
+            tests:
+              - unique
+              - not_null
+
+      - name: credit_debit_transactions
+        identifier: credit_debit_transactions
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of credit_debit_transactions
+            tests:
+              - unique
+              - not_null
+
+      - name: currencies
+        identifier: currencies
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of currencies
+            tests:
+              - unique
+              - not_null
+
+      - name: gateway_providers
+        identifier: gateway_providers
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of gateway_providers
+            tests:
+              - unique
+              - not_null
+
+      - name: gateways
+        identifier: gateways
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of gateways
+            tests:
+              - unique
+              - not_null
+
+      - name: gateways_brands
+        identifier: gateways_brands
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of gateways_brands
+            tests:
+              - unique
+              - not_null
+
+      - name: gateways_card_type
+        identifier: gateways_card_type
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of gateways_card_type
+            tests:
+              - unique
+              - not_null
+
+      - name: gateways_currencies
+        identifier: gateways_currencies
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of gateways_currencies
+            tests:
+              - unique
+              - not_null
+
+      - name: hook_logs
+        identifier: hook_logs
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of hook_logs
+            tests:
+              - unique
+              - not_null
+
+      - name: hooks
+        identifier: hooks
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of hooks
+            tests:
+              - unique
+              - not_null
+
+      - name: invoice_contracts
+        identifier: invoice_contracts
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of invoice_contracts
+            tests:
+              - unique
+              - not_null
+
+      - name: invoice_numbers
+        identifier: invoice_numbers
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of invoice_numbers
+            tests:
+              - unique
+              - not_null
+
+      - name: invoice_payments
+        identifier: invoice_payments
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of invoice_payments
+            tests:
+              - unique
+              - not_null
+
+      - name: invoice_products
+        identifier: invoice_products
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of invoice_products
+            tests:
+              - unique
+              - not_null
+
+      - name: invoices
+        identifier: invoices
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of invoices
+            tests:
+              - unique
+              - not_null
+
+      - name: invoices_categories
+        identifier: invoices_categories
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of invoices_categories
+            tests:
+              - unique
+              - not_null
+
+      - name: languages
+        identifier: languages
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of languages
+            tests:
+              - unique
+              - not_null
+
+      - name: lead_client_imports
+        identifier: lead_client_imports
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of lead_client_imports
+            tests:
+              - unique
+              - not_null
+
+      - name: leads
+        identifier: leads
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of leads
+            tests:
+              - unique
+              - not_null
+
+      - name: organisation_stats
+        identifier: organisation_stats
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of organisation_stats
+            tests:
+              - unique
+              - not_null
+
+      - name: organisations
+        identifier: organisations
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of organisations
+            tests:
+              - unique
+              - not_null
+
+      - name: products
+        identifier: products
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of products
+            tests:
+              - unique
+              - not_null
+
+      - name: products_categories
+        identifier: products_categories
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of products_categories
+            tests:
+              - unique
+              - not_null
+
+      - name: statuses
+        identifier: statuses
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of statuses
+            tests:
+              - unique
+              - not_null
+
+      - name: users
+        identifier: users
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of users
+            tests:
+              - unique
+              - not_null
+
+      - name: payments_log
+        identifier: payments_log
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of payments_log
+            tests:
+              - unique
+              - not_null
+
+      - name: payment_types
+        identifier: payment_types
+        freshness:
+          warn_after:
+            count: 24
+            period: hour
+          error_after:
+            count: 48
+            period: hour
+        columns:
+          - name: id
+            description: Primary key of payment_types
+            tests:
+              - unique
+              - not_null

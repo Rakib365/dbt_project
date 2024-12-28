@@ -1,0 +1,35 @@
+name: 'analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'analytics'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+on-run-start:
+  - "{{ create_datasets() }}"
+
+models:
+  analytics:
+    +location: europe-west3
+    raw:
+      +materialized: table
+      +schema: dbt_uautomation_raw_tables
+    staging:
+      +materialized: view
+      +schema: dbt_uautomation_staging_views
+    transformation:
+      +materialized: table
+      +schema: dbt_uautomation_transformation_tables
+    reporting:
+      +materialized: table
+      +schema: dbt_uautomation_reporting_tables

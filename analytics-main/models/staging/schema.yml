@@ -1,0 +1,236 @@
+version: 2
+
+models:
+  - name: stg_accounts_enhanced
+    description: "Enhanced accounts data with status and type information"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: currency_id
+        description: "Foreign key to currencies"
+        tests:
+          - relationships:
+              to: ref('raw_currencies')
+              field: id
+
+  - name: stg_brands_enhanced
+    description: "Enhanced brands data with language information"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: currency_id
+        description: "Foreign key to currencies"
+        tests:
+          - relationships:
+              to: ref('raw_currencies')
+              field: id
+
+  - name: stg_contracts_enhanced
+    description: "Enhanced contracts data with products information"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: currency_id
+        description: "Foreign key to currencies"
+        tests:
+          - relationships:
+              to: ref('raw_currencies')
+              field: id
+
+  - name: stg_transactions_enhanced
+    description: "Enhanced credit/debit transactions with invoice details"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: client_id
+        description: "Foreign key to clients"
+        tests:
+          - relationships:
+              to: ref('raw_clients')
+              field: id
+      - name: currency_id
+        description: "Foreign key to currencies"
+        tests:
+          - relationships:
+              to: ref('raw_currencies')
+              field: id
+
+  - name: stg_invoices_enhanced
+    description: "Enhanced invoices with category information"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: client_id
+        description: "Foreign key to clients"
+        tests:
+          - relationships:
+              to: ref('raw_clients')
+              field: id
+      - name: currency_id
+        description: "Foreign key to currencies"
+        tests:
+          - relationships:
+              to: ref('raw_currencies')
+              field: id
+
+  - name: stg_products_enhanced
+    description: "Enhanced products with category information"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: currency_id
+        description: "Foreign key to currencies"
+        tests:
+          - relationships:
+              to: ref('raw_currencies')
+              field: id
+
+  - name: stg_users_enhanced
+    description: "Enhanced users data"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+
+  - name: stg_leads_enhanced
+    description: "Enhanced leads data"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: client_id
+        description: "Foreign key to clients"
+        tests:
+          - relationships:
+              to: ref('raw_clients')
+              field: id
+
+  - name: stg_hook_logs_enhanced
+    description: "Enhanced hook logs with hook details"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: client_id
+        description: "Foreign key to clients"
+        tests:
+          - relationships:
+              to: ref('raw_clients')
+              field: id
+
+  - name: stg_organisations_enhanced
+    description: "Enhanced organisations data"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: client_id
+        description: "Foreign key to clients"
+        tests:
+          - relationships:
+              to: ref('raw_clients')
+              field: id
+
+  - name: stg_organisation_stats_enhanced
+    description: "Enhanced organisation stats with additional details"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+
+  - name: stg_payments_enhanced
+    description: "Enhanced payments data with payment types"
+    columns:
+      - name: id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+        description: "Record creation timestamp"
+      - name: updated_at
+        description: "Record last update timestamp"
+      - name: client_id
+        description: "Foreign key to clients"
+        tests:
+          - relationships:
+              to: ref('raw_clients')
+              field: id
+      - name: currency_id
+        description: "Foreign key to currencies"
+        tests:
+          - relationships:
+              to: ref('raw_currencies')
+              field: id
