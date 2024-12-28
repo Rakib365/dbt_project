@@ -1,0 +1,344 @@
+version: 2
+
+models:
+  - name: raw_account_types
+    description: Raw data from account_types table
+    columns:
+      - name: id
+        description: Primary key for account_types
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_accounts
+    description: Raw data from accounts table
+    columns:
+      - name: id
+        description: Primary key for accounts
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_accounts_statuses
+    description: Raw data from accounts_statuses table
+    columns:
+      - name: id
+        description: Primary key for accounts_statuses
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_billing_cycles
+    description: Raw data from billing_cycles table
+    columns:
+      - name: id
+        description: Primary key for billing_cycles
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_brand_language
+    description: Raw data from brand_language table
+    columns:
+      - name: id
+        description: Primary key for brand_language
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_brands
+    description: Raw data from brands table
+    columns:
+      - name: id
+        description: Primary key for brands
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_card_types
+    description: Raw data from card_types table
+    columns:
+      - name: id
+        description: Primary key for card_types
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_clients
+    description: Raw data from clients table
+    columns:
+      - name: id
+        description: Primary key for clients
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_clients_accounts
+    description: Raw data from clients_accounts table
+    columns:
+      - name: id
+        description: Primary key for clients_accounts
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_contracts
+    description: Raw data from contracts table
+    columns:
+      - name: id
+        description: Primary key for contracts
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_contracts_products
+    description: Raw data from contracts_products table
+    columns:
+      - name: id
+        description: Primary key for contracts_products
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_countries
+    description: Raw data from countries table
+    columns:
+      - name: id
+        description: Primary key for countries
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_credit_debit_transactions
+    description: Raw data from credit_debit_transactions table
+    columns:
+      - name: id
+        description: Primary key for credit_debit_transactions
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_currencies
+    description: Raw data from currencies table
+    columns:
+      - name: id
+        description: Primary key for currencies
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_gateway_providers
+    description: Raw data from gateway_providers table
+    columns:
+      - name: id
+        description: Primary key for gateway_providers
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_gateways
+    description: Raw data from gateways table
+    columns:
+      - name: id
+        description: Primary key for gateways
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_gateways_brands
+    description: Raw data from gateways_brands table
+    columns:
+      - name: id
+        description: Primary key for gateways_brands
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_gateways_card_type
+    description: Raw data from gateways_card_type table
+    columns:
+      - name: id
+        description: Primary key for gateways_card_type
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_gateways_currencies
+    description: Raw data from gateways_currencies table
+    columns:
+      - name: id
+        description: Primary key for gateways_currencies
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_hook_logs
+    description: Raw data from hook_logs table
+    columns:
+      - name: id
+        description: Primary key for hook_logs
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_hooks
+    description: Raw data from hooks table
+    columns:
+      - name: id
+        description: Primary key for hooks
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_invoice_contracts
+    description: Raw data from invoice_contracts table
+    columns:
+      - name: id
+        description: Primary key for invoice_contracts
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_invoice_numbers
+    description: Raw data from invoice_numbers table
+    columns:
+      - name: id
+        description: Primary key for invoice_numbers
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_invoice_payments
+    description: Raw data from invoice_payments table
+    columns:
+      - name: id
+        description: Primary key for invoice_payments
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_invoice_products
+    description: Raw data from invoice_products table
+    columns:
+      - name: id
+        description: Primary key for invoice_products
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_invoices
+    description: Raw data from invoices table
+    columns:
+      - name: id
+        description: Primary key for invoices
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_invoices_categories
+    description: Raw data from invoices_categories table
+    columns:
+      - name: id
+        description: Primary key for invoices_categories
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_languages
+    description: Raw data from languages table
+    columns:
+      - name: id
+        description: Primary key for languages
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_lead_client_imports
+    description: Raw data from lead_client_imports table
+    columns:
+      - name: id
+        description: Primary key for lead_client_imports
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_leads
+    description: Raw data from leads table
+    columns:
+      - name: id
+        description: Primary key for leads
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_organisation_stats
+    description: Raw data from organisation_stats table
+    columns:
+      - name: id
+        description: Primary key for organisation_stats
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_organisations
+    description: Raw data from organisations table
+    columns:
+      - name: id
+        description: Primary key for organisations
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_products
+    description: Raw data from products table
+    columns:
+      - name: id
+        description: Primary key for products
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_products_categories
+    description: Raw data from products_categories table
+    columns:
+      - name: id
+        description: Primary key for products_categories
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_statuses
+    description: Raw data from statuses table
+    columns:
+      - name: id
+        description: Primary key for statuses
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_users
+    description: Raw data from users table
+    columns:
+      - name: id
+        description: Primary key for users
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_payments_log
+    description: Raw data from payments_log table
+    columns:
+      - name: id
+        description: Primary key for payments_log
+        tests:
+          - unique
+          - not_null
+
+  - name: raw_payment_types
+    description: Raw data from payment_types table
+    columns:
+      - name: id
+        description: Primary key for payment_types
+        tests:
+          - unique
+          - not_null
